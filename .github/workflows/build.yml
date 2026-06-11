@@ -51,6 +51,10 @@ jobs:
       run: flutter pub get
       working-directory: ./flutter_app
     
+    - name: Precache iOS artifacts
+      run: flutter precache --ios
+      working-directory: ./flutter_app
+    
     - name: Build iOS
       run: flutter build ios --release --no-codesign
       working-directory: ./flutter_app
