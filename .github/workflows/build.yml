@@ -22,7 +22,6 @@ jobs:
     
     - name: Create fresh Flutter project
       run: |
-        cd flutter_app
         mv pubspec.yaml pubspec_old.yaml
         mv lib lib_backup
         flutter create --org com.shinekid --project-name shine_kid .
@@ -63,7 +62,6 @@ jobs:
     
     - name: Create fresh Flutter project
       run: |
-        cd flutter_app
         mv pubspec.yaml pubspec_old.yaml
         mv lib lib_backup
         flutter create --org com.shinekid --project-name shine_kid .
