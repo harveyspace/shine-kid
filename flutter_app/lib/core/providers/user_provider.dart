@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:math';
 
 import '../models/user.dart';
 import '../services/api_service.dart';
@@ -27,6 +28,27 @@ class UserNotifier extends StateNotifier<User?> {
     } catch (e) {
       throw Exception('登录失败: $e');
     }
+  }
+
+  Future<void> mockLogin() async {
+    final mockUserId = 'mock_user_${Random().nextInt(9999)}';
+    final mockPhone = '138${Random().nextInt(90000000) + 10000000}';
+    
+    state = User(
+      id: mockUserId,
+      phone: mockPhone,
+      nickname: '闪光少年_${mockPhone.substring(7)}',
+      avatar: null,
+      gender: null,
+      birthDate: null,
+      createdAt: DateTime.now().toIso8601String(),
+    );
+    
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('access_token', 'mock_token_$mockUserId');
+    await prefs.setString('user_id', mockUserId);
+    await prefs.setString('user_phone', mockPhone);
+    await prefs.setString('user_nickname', state!.nickname);
   }
 
   Future<void> loadUserFromStorage() async {

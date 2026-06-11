@@ -61,6 +61,22 @@ class _HomePageState extends ConsumerState<HomePage> {
     }
   }
 
+  void _handleMockLogin() async {
+    try {
+      await ref.read(userProvider.notifier).mockLogin();
+      setState(() {
+        _isLoginModalOpen = false;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('快速体验已开启')),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('体验失败: $e')),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final user = ref.watch(userProvider);
@@ -156,6 +172,12 @@ class _HomePageState extends ConsumerState<HomePage> {
     );
   }
 
+  @override
+  void dispose() {
+    _phoneController.dispose();
+    super.dispose();
+  }
+
   Widget _buildWelcomeSection(String nickname) {
     return Row(
       children: [
@@ -185,39 +207,57 @@ class _HomePageState extends ConsumerState<HomePage> {
   }
 
   Widget _buildGuestSection() {
-    return GestureDetector(
-      onTap: () => setState(() => _isLoginModalOpen = true),
-      child: Container(
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: AppTheme.primaryColor.withOpacity(0.1),
-          borderRadius: BorderRadius.circular(AppTheme.borderRadius),
-          border: Border.all(color: AppTheme.primaryColor.withOpacity(0.3)),
-        ),
-        child: Row(
-          children: [
-            const Icon(
-              Icons.login_outlined,
-              color: AppTheme.primaryColor,
-              size: 24,
-            ),
-            const SizedBox(width: 12),
-            const Text(
-              '点击登录，开启你的运动之旅',
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.medium,
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: AppTheme.primaryColor.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(AppTheme.borderRadius),
+        border: Border.all(color: AppTheme.primaryColor.withOpacity(0.3)),
+      ),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              const Icon(
+                Icons.login_outlined,
                 color: AppTheme.primaryColor,
+                size: 24,
               ),
-            ),
-            const Spacer(),
-            const Icon(
-              Icons.arrow_forward_ios,
-              color: AppTheme.primaryColor,
-              size: 18,
-            ),
-          ],
-        ),
+              const SizedBox(width: 12),
+              const Text(
+                '开启你的运动之旅',
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.medium,
+                  color: AppTheme.primaryColor,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Row(
+            children: [
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: _handleMockLogin,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppTheme.primaryColor,
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    borderRadius: BorderRadius.circular(AppTheme.borderRadius),
+                  ),
+                  child: const Text(
+                    '快速体验',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
