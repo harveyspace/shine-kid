@@ -20,6 +20,20 @@ jobs:
         flutter-version: '3.19.6'
         channel: 'stable'
     
+    - name: Create fresh Flutter project
+      run: |
+        cd flutter_app
+        mv pubspec.yaml pubspec_old.yaml
+        mv lib lib_backup
+        flutter create --org com.shinekid --project-name shine_kid .
+        mv pubspec_old.yaml pubspec.yaml
+        mv lib_backup/core core
+        mv lib_backup/features features  
+        mv lib_backup/routes routes
+        mv lib_backup/main.dart main.dart
+        rm -rf lib_backup
+      working-directory: ./flutter_app
+    
     - name: Install dependencies
       run: flutter pub get
       working-directory: ./flutter_app
@@ -46,6 +60,20 @@ jobs:
       with:
         flutter-version: '3.19.6'
         channel: 'stable'
+    
+    - name: Create fresh Flutter project
+      run: |
+        cd flutter_app
+        mv pubspec.yaml pubspec_old.yaml
+        mv lib lib_backup
+        flutter create --org com.shinekid --project-name shine_kid .
+        mv pubspec_old.yaml pubspec.yaml
+        mv lib_backup/core core
+        mv lib_backup/features features  
+        mv lib_backup/routes routes
+        mv lib_backup/main.dart main.dart
+        rm -rf lib_backup
+      working-directory: ./flutter_app
     
     - name: Install dependencies
       run: flutter pub get
