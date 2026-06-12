@@ -33,6 +33,11 @@ jobs:
         rm -rf lib_backup
       working-directory: ./flutter_app
     
+    - name: Set minSdkVersion to 21 for camera plugin
+      run: |
+        sed -i 's/minSdk = flutter.minSdkVersion/minSdk = 21/g' android/app/build.gradle.kts
+      working-directory: ./flutter_app
+    
     - name: Install dependencies
       run: flutter pub get
       working-directory: ./flutter_app
@@ -71,6 +76,11 @@ jobs:
         mv lib_backup/routes routes
         mv lib_backup/main.dart main.dart
         rm -rf lib_backup
+      working-directory: ./flutter_app
+    
+    - name: Set minSdkVersion to 21 for camera plugin
+      run: |
+        sed -i 's/minSdk = flutter.minSdkVersion/minSdk = 21/g' android/app/build.gradle.kts
       working-directory: ./flutter_app
     
     - name: Install dependencies
