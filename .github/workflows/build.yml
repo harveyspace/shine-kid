@@ -26,11 +26,8 @@ jobs:
         mv lib lib_backup
         flutter create --org com.shinekid --project-name shine_kid .
         mv pubspec_old.yaml pubspec.yaml
-        mv lib_backup/core core
-        mv lib_backup/features features  
-        mv lib_backup/routes routes
-        mv lib_backup/main.dart main.dart
-        rm -rf lib_backup
+        rm -rf lib
+        mv lib_backup lib
       working-directory: ./flutter_app
     
     - name: Set minSdkVersion to 21 for camera plugin
@@ -76,11 +73,8 @@ jobs:
         mv lib lib_backup
         flutter create --org com.shinekid --project-name shine_kid .
         mv pubspec_old.yaml pubspec.yaml
-        mv lib_backup/core core
-        mv lib_backup/features features  
-        mv lib_backup/routes routes
-        mv lib_backup/main.dart main.dart
-        rm -rf lib_backup
+        rm -rf lib
+        mv lib_backup lib
       working-directory: ./flutter_app
     
     - name: Set minSdkVersion to 21 for camera plugin
