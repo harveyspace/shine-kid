@@ -1,11 +1,11 @@
 import 'package:go_router/go_router.dart';
 
-import 'features/home/home_page.dart';
-import 'features/jump_rope/jump_rope_page.dart';
-import 'features/jump_rope/jump_rope_record_page.dart';
-import 'features/football/football_page.dart';
-import 'features/report/report_page.dart';
-import 'features/profile/profile_page.dart';
+import '../features/home/home_page.dart';
+import '../features/jump_rope/jump_rope_page.dart';
+import '../features/jump_rope/jump_rope_record_page.dart';
+import '../features/football/football_page.dart';
+import '../features/report/report_page.dart';
+import '../features/profile/profile_page.dart';
 
 class AppRouter {
   final router = GoRouter(

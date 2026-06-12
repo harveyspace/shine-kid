@@ -73,22 +73,22 @@ class AppTheme {
     ),
     headlineSmall: TextStyle(
       fontSize: 22,
-      fontWeight: FontWeight.semibold,
+      fontWeight: FontWeight.w600,
       color: textPrimary,
     ),
     titleLarge: TextStyle(
       fontSize: 17,
-      fontWeight: FontWeight.semibold,
+      fontWeight: FontWeight.w600,
       color: textPrimary,
     ),
     titleMedium: TextStyle(
       fontSize: 16,
-      fontWeight: FontWeight.medium,
+      fontWeight: FontWeight.w500,
       color: textPrimary,
     ),
     titleSmall: TextStyle(
       fontSize: 15,
-      fontWeight: FontWeight.medium,
+      fontWeight: FontWeight.w500,
       color: textPrimary,
     ),
     bodyLarge: TextStyle(
@@ -108,12 +108,12 @@ class AppTheme {
     ),
     labelLarge: TextStyle(
       fontSize: 15,
-      fontWeight: FontWeight.semibold,
+      fontWeight: FontWeight.w600,
       color: textPrimary,
     ),
     labelMedium: TextStyle(
       fontSize: 14,
-      fontWeight: FontWeight.medium,
+      fontWeight: FontWeight.w500,
       color: textSecondary,
     ),
     labelSmall: TextStyle(
@@ -136,22 +136,22 @@ class AppTheme {
     ),
     headlineSmall: TextStyle(
       fontSize: 22,
-      fontWeight: FontWeight.semibold,
+      fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
     titleLarge: TextStyle(
       fontSize: 17,
-      fontWeight: FontWeight.semibold,
+      fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
     titleMedium: TextStyle(
       fontSize: 16,
-      fontWeight: FontWeight.medium,
+      fontWeight: FontWeight.w500,
       color: Colors.white,
     ),
     titleSmall: TextStyle(
       fontSize: 15,
-      fontWeight: FontWeight.medium,
+      fontWeight: FontWeight.w500,
       color: Colors.white,
     ),
     bodyLarge: TextStyle(
@@ -171,12 +171,12 @@ class AppTheme {
     ),
     labelLarge: TextStyle(
       fontSize: 15,
-      fontWeight: FontWeight.semibold,
+      fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
     labelMedium: TextStyle(
       fontSize: 14,
-      fontWeight: FontWeight.medium,
+      fontWeight: FontWeight.w500,
       color: textSecondary,
     ),
     labelSmall: TextStyle(
@@ -206,7 +206,7 @@ class AppTheme {
           elevation: elevation,
           textStyle: const TextStyle(
             fontSize: 17,
-            fontWeight: FontWeight.semibold,
+            fontWeight: FontWeight.w600,
           ),
         ),
       );
@@ -216,7 +216,7 @@ class AppTheme {
           foregroundColor: primaryColor,
           textStyle: const TextStyle(
             fontSize: 16,
-            fontWeight: FontWeight.medium,
+            fontWeight: FontWeight.w500,
           ),
         ),
       );
@@ -268,7 +268,7 @@ class AppTheme {
     centerTitle: true,
     titleTextStyle: TextStyle(
       fontSize: 18,
-      fontWeight: FontWeight.semibold,
+      fontWeight: FontWeight.w600,
       color: textPrimary,
     ),
   );
@@ -280,7 +280,7 @@ class AppTheme {
     centerTitle: true,
     titleTextStyle: TextStyle(
       fontSize: 18,
-      fontWeight: FontWeight.semibold,
+      fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
   );
@@ -292,7 +292,7 @@ class AppTheme {
         unselectedItemColor: textSecondary,
         selectedLabelStyle: const TextStyle(
           fontSize: 12,
-          fontWeight: FontWeight.semibold,
+          fontWeight: FontWeight.w600,
         ),
         unselectedLabelStyle: const TextStyle(
           fontSize: 12,
@@ -308,7 +308,7 @@ class AppTheme {
         unselectedItemColor: textSecondary,
         selectedLabelStyle: const TextStyle(
           fontSize: 12,
-          fontWeight: FontWeight.semibold,
+          fontWeight: FontWeight.w600,
         ),
         unselectedLabelStyle: const TextStyle(
           fontSize: 12,
