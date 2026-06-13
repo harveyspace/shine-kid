@@ -274,20 +274,20 @@ class _ReportPageState extends ConsumerState<ReportPage> {
   Widget _buildRadarChart() {
     final abilities = _sportType == 'jump_rope'
         ? [
-            {'name': '爆发力', 'score': _currentReport?.explosivePower ?? 85},
-            {'name': '速度', 'score': _currentReport?.speed ?? 80},
-            {'name': '耐力', 'score': _currentReport?.endurance ?? 75},
-            {'name': '协调性', 'score': _currentReport?.coordination ?? 82},
-            {'name': '柔韧性', 'score': _currentReport?.flexibility ?? 70},
-            {'name': '稳定性', 'score': _currentReport?.stability ?? 85},
+            {'name': '爆发力', 'score': _currentReport?.abilityScores.explosive ?? 85},
+            {'name': '速度', 'score': _currentReport?.abilityScores.speed ?? 80},
+            {'name': '耐力', 'score': _currentReport?.abilityScores.endurance ?? 75},
+            {'name': '协调性', 'score': _currentReport?.abilityScores.precision ?? 82},
+            {'name': '柔韧性', 'score': _currentReport?.abilityScores.flexibility ?? 70},
+            {'name': '稳定性', 'score': _currentReport?.abilityScores.stability ?? 85},
           ]
         : [
-            {'name': '爆发力', 'score': _currentReport?.explosivePower ?? 78},
-            {'name': '速度', 'score': _currentReport?.speed ?? 82},
-            {'name': '精准', 'score': _currentReport?.precision ?? 75},
-            {'name': '耐力', 'score': _currentReport?.endurance ?? 80},
-            {'name': '柔韧', 'score': _currentReport?.flexibility ?? 72},
-            {'name': '球商', 'score': _currentReport?.gameIq ?? 85},
+            {'name': '爆发力', 'score': _currentReport?.abilityScores.explosive ?? 78},
+            {'name': '速度', 'score': _currentReport?.abilityScores.speed ?? 82},
+            {'name': '精准', 'score': _currentReport?.abilityScores.precision ?? 75},
+            {'name': '耐力', 'score': _currentReport?.abilityScores.endurance ?? 80},
+            {'name': '柔韧', 'score': _currentReport?.abilityScores.flexibility ?? 72},
+            {'name': '球商', 'score': _currentReport?.abilityScores.iq ?? 85},
           ];
 
     return Container(
@@ -338,20 +338,20 @@ class _ReportPageState extends ConsumerState<ReportPage> {
   Widget _buildAbilityList() {
     final abilities = _sportType == 'jump_rope'
         ? [
-            {'name': '爆发力', 'score': _currentReport?.explosivePower ?? 85, 'color': AppTheme.primaryColor},
-            {'name': '速度', 'score': _currentReport?.speed ?? 80, 'color': AppTheme.successColor},
-            {'name': '耐力', 'score': _currentReport?.endurance ?? 75, 'color': AppTheme.secondaryColor},
-            {'name': '协调性', 'score': _currentReport?.coordination ?? 82, 'color': AppTheme.infoColor},
-            {'name': '柔韧性', 'score': _currentReport?.flexibility ?? 70, 'color': AppTheme.warningColor},
-            {'name': '稳定性', 'score': _currentReport?.stability ?? 85, 'color': AppTheme.successColor},
+            {'name': '爆发力', 'score': _currentReport?.abilityScores.explosive ?? 85, 'color': AppTheme.primaryColor},
+            {'name': '速度', 'score': _currentReport?.abilityScores.speed ?? 80, 'color': AppTheme.successColor},
+            {'name': '耐力', 'score': _currentReport?.abilityScores.endurance ?? 75, 'color': AppTheme.secondaryColor},
+            {'name': '协调性', 'score': _currentReport?.abilityScores.precision ?? 82, 'color': AppTheme.infoColor},
+            {'name': '柔韧性', 'score': _currentReport?.abilityScores.flexibility ?? 70, 'color': AppTheme.warningColor},
+            {'name': '稳定性', 'score': _currentReport?.abilityScores.stability ?? 85, 'color': AppTheme.successColor},
           ]
         : [
-            {'name': '爆发力', 'score': _currentReport?.explosivePower ?? 78, 'color': AppTheme.primaryColor},
-            {'name': '速度', 'score': _currentReport?.speed ?? 82, 'color': AppTheme.successColor},
-            {'name': '精准', 'score': _currentReport?.precision ?? 75, 'color': AppTheme.secondaryColor},
-            {'name': '耐力', 'score': _currentReport?.endurance ?? 80, 'color': AppTheme.infoColor},
-            {'name': '柔韧', 'score': _currentReport?.flexibility ?? 72, 'color': AppTheme.warningColor},
-            {'name': '球商', 'score': _currentReport?.gameIq ?? 85, 'color': AppTheme.successColor},
+            {'name': '爆发力', 'score': _currentReport?.abilityScores.explosive ?? 78, 'color': AppTheme.primaryColor},
+            {'name': '速度', 'score': _currentReport?.abilityScores.speed ?? 82, 'color': AppTheme.successColor},
+            {'name': '精准', 'score': _currentReport?.abilityScores.precision ?? 75, 'color': AppTheme.secondaryColor},
+            {'name': '耐力', 'score': _currentReport?.abilityScores.endurance ?? 80, 'color': AppTheme.infoColor},
+            {'name': '柔韧', 'score': _currentReport?.abilityScores.flexibility ?? 72, 'color': AppTheme.warningColor},
+            {'name': '球商', 'score': _currentReport?.abilityScores.iq ?? 85, 'color': AppTheme.successColor},
           ];
 
     return Column(
@@ -377,7 +377,7 @@ class _ReportPageState extends ConsumerState<ReportPage> {
             name,
             style: const TextStyle(
               fontSize: 16,
-              fontWeight: FontWeight.medium,
+              fontWeight: FontWeight.w500,
               color: AppTheme.textPrimary,
             ),
           ),

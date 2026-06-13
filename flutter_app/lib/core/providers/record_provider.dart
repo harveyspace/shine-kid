@@ -37,6 +37,10 @@ class JumpRopeRecordsNotifier extends StateNotifier<List<JumpRopeRecord>> {
       throw Exception('分析失败: $e');
     }
   }
+
+  void clearRecords() {
+    state = [];
+  }
 }
 
 final footballRecordsProvider = StateNotifierProvider<FootballRecordsNotifier, List<FootballRecord>>((ref) {
@@ -71,5 +75,9 @@ class FootballRecordsNotifier extends StateNotifier<List<FootballRecord>> {
     } catch (e) {
       throw Exception('分析失败: $e');
     }
+  }
+
+  void clearRecords() {
+    state = [];
   }
 }

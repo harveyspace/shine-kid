@@ -107,10 +107,9 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
                 const SizedBox(height: 4),
                 Text(
                   user?.phone ?? '',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 14,
-                    color: Colors.white,
-                    opacity: 0.8,
+                    color: Colors.white.withOpacity(0.8),
                   ),
                 ),
               ],
@@ -193,7 +192,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
   }
 
   Widget _buildMenuList() {
-    final menuItems = [
+    final List<Map<String, dynamic>> menuItems = [
       {
         'icon': Icons.settings_outlined,
         'title': '设置',
@@ -214,9 +213,9 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
     return Column(
       children: menuItems
           .map((item) => _buildMenuItem(
-                item['icon']!,
-                item['title']!,
-                item['subtitle']!,
+                item['icon'] as IconData,
+                item['title'] as String,
+                item['subtitle'] as String,
               ))
           .toList(),
     );
@@ -250,7 +249,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
                     title,
                     style: const TextStyle(
                       fontSize: 16,
-                      fontWeight: FontWeight.medium,
+                      fontWeight: FontWeight.w500,
                       color: AppTheme.textPrimary,
                     ),
                   ),
