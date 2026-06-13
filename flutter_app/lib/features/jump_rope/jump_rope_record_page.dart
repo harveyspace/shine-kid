@@ -31,6 +31,11 @@ class _JumpRopeRecordPageState extends ConsumerState<JumpRopeRecordPage> {
   @override
   void initState() {
     super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
     _loadDuration();
   }
 
