@@ -107,17 +107,17 @@ class _FootballPageState extends ConsumerState<FootballPage> {
               children: [
                 _buildResultItem(
                   '颠球',
-                  '${latestRecord?.balanceCount ?? 12}次',
+                  '${latestRecord?.actionCounts.balance ?? 12}次',
                   AppTheme.successColor,
                 ),
                 _buildResultItem(
                   '带球',
-                  '${latestRecord?.dribbleCount ?? 30}次',
+                  '${latestRecord?.actionCounts.dribble ?? 30}次',
                   AppTheme.primaryColor,
                 ),
                 _buildResultItem(
                   '射门',
-                  '${latestRecord?.shootCount ?? 5}次',
+                  '${latestRecord?.actionCounts.shoot ?? 5}次',
                   AppTheme.secondaryColor,
                 ),
               ],
@@ -226,7 +226,7 @@ class _FootballPageState extends ConsumerState<FootballPage> {
                   border: Border.all(
                     color: AppTheme.border,
                     width: 2,
-                    style: BorderStyle.dashed,
+                    style: BorderStyle.solid,
                   ),
                   borderRadius: BorderRadius.circular(AppTheme.borderRadiusLarge),
                 ),

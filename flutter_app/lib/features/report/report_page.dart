@@ -240,12 +240,11 @@ class _ReportPageState extends ConsumerState<ReportPage> {
       ),
       child: Column(
         children: [
-          const Text(
+          Text(
             '综合评分',
             style: TextStyle(
               fontSize: 16,
-              color: Colors.white,
-              opacity: 0.8,
+              color: Colors.white.withOpacity(0.8),
             ),
           ),
           const SizedBox(height: 8),
@@ -315,21 +314,20 @@ class _ReportPageState extends ConsumerState<ReportPage> {
           ),
           dataSets: [
             RadarDataSet(
-              values: abilities
-                  .map((a) => RadarChartValue(value: a['score'] as num))
+              dataEntries: abilities
+                  .map((a) => RadarEntry(value: a['score'] as double))
                   .toList(),
               borderColor: AppTheme.primaryColor,
-              backgroundColor: AppTheme.primaryColor.withOpacity(0.2),
+              fillColor: AppTheme.primaryColor.withOpacity(0.2),
               borderWidth: 2,
               entryRadius: 4,
             ),
           ],
-          titleAlignment: RadarEntryAlignment.center,
-          titles: abilities
-              .map((a) => RadarChartTitle(text: a['name'] as String))
-              .toList(),
+          getTitle: (index, angle) {
+            return RadarChartTitle(text: abilities[index]['name'] as String);
+          },
           gridBorderData: const BorderSide(color: AppTheme.border),
-          angleStep: 60,
+          tickBorderData: const BorderSide(color: AppTheme.border),
         ),
       ),
     );
@@ -357,9 +355,9 @@ class _ReportPageState extends ConsumerState<ReportPage> {
     return Column(
       children: abilities
           .map((ability) => _buildAbilityItem(
-                ability['name']!,
-                ability['score']!,
-                ability['color']!,
+                ability['name'] as String,
+                ability['score'] as num,
+                ability['color'] as Color,
               ))
           .toList(),
     );

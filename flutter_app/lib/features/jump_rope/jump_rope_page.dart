@@ -70,7 +70,7 @@ class _JumpRopePageState extends ConsumerState<JumpRopePage> {
                 borderRadius: BorderRadius.circular(AppTheme.borderRadiusLarge),
               ),
               child: const Icon(
-                Icons.sports_skip_outlined,
+                Icons.fitness_center,
                 size: 80,
                 color: AppTheme.primaryColor,
               ),

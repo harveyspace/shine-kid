@@ -279,7 +279,7 @@ class _JumpRopeRecordPageState extends ConsumerState<JumpRopeRecordPage> {
               Column(
                 children: [
                   const Icon(
-                    Icons.sports_skip_outlined,
+                    Icons.fitness_center,
                     size: 80,
                     color: AppTheme.primaryColor,
                   ),

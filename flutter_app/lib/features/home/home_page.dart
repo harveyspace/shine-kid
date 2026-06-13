@@ -131,7 +131,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                 Expanded(
                   child: _buildSportCard(
                     context,
-                    icon: Icons.sports_skip_outlined,
+                    icon: Icons.fitness_center,
                     title: '跳绳',
                     description: '选择时长开始训练',
                     color: AppTheme.primaryColor,
@@ -228,7 +228,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                 '开启你的运动之旅',
                 style: TextStyle(
                   fontSize: 15,
-                  fontWeight: FontWeight.medium,
+                  fontWeight: FontWeight.w500,
                   color: AppTheme.primaryColor,
                 ),
               ),
@@ -243,7 +243,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppTheme.primaryColor,
                     padding: const EdgeInsets.symmetric(vertical: 12),
-                    borderRadius: BorderRadius.circular(AppTheme.borderRadius),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(AppTheme.borderRadius),
+                    ),
                   ),
                   child: const Text(
                     '快速体验',
@@ -397,7 +399,7 @@ class _HomePageState extends ConsumerState<HomePage> {
               borderRadius: BorderRadius.circular(AppTheme.borderRadius),
             ),
             child: const Icon(
-              Icons.sports_skip_outlined,
+              Icons.fitness_center,
               size: 24,
               color: AppTheme.primaryColor,
             ),
@@ -411,7 +413,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                   '跳绳训练',
                   style: TextStyle(
                     fontSize: 16,
-                    fontWeight: FontWeight.semibold,
+                    fontWeight: FontWeight.w600,
                     color: AppTheme.textPrimary,
                   ),
                 ),
@@ -476,7 +478,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                   '足球训练',
                   style: TextStyle(
                     fontSize: 16,
-                    fontWeight: FontWeight.semibold,
+                    fontWeight: FontWeight.w600,
                     color: AppTheme.textPrimary,
                   ),
                 ),
